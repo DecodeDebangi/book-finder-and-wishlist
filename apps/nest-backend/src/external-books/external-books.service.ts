@@ -39,7 +39,7 @@ export class ExternalBooksService {
       const books = paginatedDocs.map(book => ({
         title: book.title,
         author: book.author_name ? book.author_name.join(', ') : 'Unknown',
-        publishDate: book.first_publish_year || 'Unknown',
+        first_publish_year: book.first_publish_year || 'Unknown',
         coverUrl: book.cover_i
           ? `https://covers.openlibrary.org/b/id/${book.cover_i}-L.jpg`
           : null

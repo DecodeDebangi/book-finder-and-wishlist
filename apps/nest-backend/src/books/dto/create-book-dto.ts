@@ -13,9 +13,12 @@ export class CreateBooksDTO{
     @IsUrl()
     readonly coverUrl!: string;
 
-    @IsNotEmpty()
-    @IsDateString()
-    readonly releaseDate!: Date;
+    // @IsNotEmpty()
+    // @IsDateString()
+    // readonly releaseDate!: Date;
+
+    readonly first_publish_year!: Number
+
 
     @IsNotEmpty()
     readonly pages!: number;

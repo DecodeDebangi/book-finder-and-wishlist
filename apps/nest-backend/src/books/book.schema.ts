@@ -5,7 +5,8 @@ export const BookSchema = new Schema({
     title: String,
     author: String,
     coverUrl: String,
-    releaseDate: Date,
+    // releaseDate: Date,
+    first_publish_year: Number,
     pages: Number,
     createdAt: {
         type: Date,

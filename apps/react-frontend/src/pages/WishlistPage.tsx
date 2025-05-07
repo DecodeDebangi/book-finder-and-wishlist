@@ -24,7 +24,7 @@ const WishlistPage = () => {
             )}
             <h2 className="font-bold">{book.title}</h2>
             <p className="text-sm text-gray-600">Author: {book.author}</p>
-            <p className="text-sm text-gray-600">Published: {book.releaseDate}</p>
+            <p className="text-sm text-gray-600">Published: {book.first_publish_year}</p>
           </div>
         ))}
       </div>

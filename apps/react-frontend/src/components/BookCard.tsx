@@ -7,17 +7,18 @@ const BookCard = ({ book }: { book: any }) => {
             ? `https://covers.openlibrary.org/b/id/${book.cover_i}-M.jpg`
             : 'https://via.placeholder.com/150';
       
-          const releaseDate = Array.isArray(book.publish_date) && book.publish_date.length > 0
-            ? new Date(book.publish_date[0]).toISOString()
-            : new Date().toISOString(); 
+            const first_publish_year = typeof book.first_publish_year === 'number'
+            ? book.first_publish_year
+            : (Array.isArray(book.publish_date) && book.publish_date.length > 0
+                ? parseInt(book.publish_date[0], 10)
+                : null);
+          
       
             const payload = {
               title: book.title || 'Untitled',
               author: book.author || 'Unknown Author',
               coverUrl: book.coverUrl || 'https://via.placeholder.com/150',
-              releaseDate: book.publishDate !== 'Unknown'
-                ? new Date(book.publishDate).toISOString()
-                : new Date().toISOString(),
+              first_publish_year: first_publish_year ?? new Date().getFullYear(), // fallback if null
               pages: 100,
             };
             
@@ -38,7 +39,7 @@ const BookCard = ({ book }: { book: any }) => {
       )}
       <h2 className="font-bold text-lg">{book.title}</h2>
       <p className="text-sm text-gray-600">Author: {book.author}</p>
-      <p className="text-sm text-gray-600">Published: {book.publishDate}</p>
+      <p className="text-sm text-gray-600">Published: {book.first_publish_year}</p>
       <button
         className="mt-2 bg-green-500 text-white px-3 py-1 rounded"
         onClick={addToWishlist}
