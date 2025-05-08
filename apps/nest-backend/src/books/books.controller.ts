@@ -29,22 +29,22 @@ export class BooksController {
 
 @Put(':id')
 async update(@Param('id') id: string, @Body() updateBookDto: CreateBooksDTO) {
-    const bookId = parseInt(id, 10);
-    const updatedBook = await this.booksService.update(bookId, updateBookDto);
-    if (!updatedBook) {
-        throw new HttpException('Book not found', HttpStatus.NOT_FOUND);
-    }
-    return updatedBook;
+const bookId = parseInt(id, 10);
+const updatedBook = await this.booksService.update(bookId, updateBookDto);
+if (!updatedBook) {
+throw new HttpException('Book not found', HttpStatus.NOT_FOUND);
+}
+return updatedBook;
 }
 
 @Delete(':id')
 async delete(@Param('id') id: string) {
-    const bookId = parseInt(id, 10);
-    const deletedBook = await this.booksService.delete(bookId);
-    if (!deletedBook) {
-        throw new HttpException('Book not found', HttpStatus.NOT_FOUND);
-    }
-    return deletedBook;
+const bookId = parseInt(id, 10);
+const deletedBook = await this.booksService.delete(bookId);
+if (!deletedBook) {
+throw new HttpException('Book not found', HttpStatus.NOT_FOUND);
+}
+return deletedBook;
 }
 
 }

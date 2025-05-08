@@ -18,7 +18,7 @@ const BookCard = ({ book }: { book: any }) => {
               title: book.title || 'Untitled',
               author: book.author || 'Unknown Author',
               coverUrl: book.coverUrl || 'https://via.placeholder.com/150',
-              first_publish_year: first_publish_year ?? new Date().getFullYear(), // fallback if null
+              first_publish_year: first_publish_year ?? new Date().getFullYear(), 
               pages: 100,
             };
             

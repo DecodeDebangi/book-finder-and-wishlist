@@ -23,7 +23,6 @@ console.log('MONGODB_URI:', process.env.MONGODB_URI);
         uri: configService.get<string>('MONGODB_URI'),
       }),
     }),
-    // MongooseModule.forRoot(process.env.MONGODB_URI!),
     ExternalBooksModule
   ],
   controllers: [AppController],

@@ -11,7 +11,8 @@ const SearchPage = () => {
 
     // const res = await axios.get(`${process.env.VITE_BACKEND_API_BASE_URL}/external-books/${query}`);
     // const res = await axios.get(`http://localhost:3001/external-books/${query}?page=2&limit=5`);
-    const res = await axios.get(`${import.meta.env.VITE_BACKEND_API_BASE_URL}/external-books/${query}?page=2&limit=5`);
+    // const res = await axios.get(`${import.meta.env.VITE_BACKEND_API_BASE_URL}/external-books/${query}?page=2&limit=5`);
+    const res = await axios.get(`${import.meta.env.VITE_BACKEND_API_BASE_URL}/external-books/${query}`);
     setBooks(res.data.data || res.data);  
   };
 

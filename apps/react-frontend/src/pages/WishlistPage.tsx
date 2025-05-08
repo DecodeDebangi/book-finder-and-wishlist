@@ -6,7 +6,7 @@ const WishlistPage = () => {
 
   const fetchWishlist = async () => {
     const res = await axios.get(`${import.meta.env.VITE_BACKEND_API_BASE_URL}/books`);
-    setWishlist(res.data);
+    setWishlist(res.data); 
   };
 
   useEffect(() => {
